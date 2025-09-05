@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pipeline Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Pipeline Orchestrator Dashboard Pacific Life (Prototype) Main</h1>
+    </header>
+
+    <main>
+        <section id="playbook-panel">
+            <h2>Playbook (Drag to Reorder)</h2>
+            <p class="muted">Drag items to reorder execution. Click ✎ to edit name/config. Click 🛈 for logs.</p>
+            
+            <div class="add-controls">
+                <button onclick="loadDevOpsPipelines()">Choose from DevOps</button>
+                <select id="devops-pipelines"></select>
+                <br><br>
+                <label>Or Upload Pipeline File:</label>
+                <input type="file" id="pipeline-file" onchange="uploadPipelineFile(event)">
+            </div>
+            
+            <ul id="playbook-list" class="pipelines-list"></ul>
+        </section>
+
+        <section id="controls">
+            <h2>Controls</h2>
+            <div class="controls-row">
+                <button onclick="runPipelines()">Run Playbook</button>
+                <button onclick="stopPipelines()" class="danger">Stop</button>
+                <button onclick="saveConfiguration()">Save Configuration</button>
+            </div>
+            <br>
+            <div class="schedule-controls">
+                <label>Schedule Run:</label>
+                <input type="datetime-local" id="schedule-time">
+                <button onclick="schedulePipeline()">Schedule</button>
+            </div>
+        </section>
+
+        <section id="run-details">
+            <h2>Run Details</h2>
+            <pre id="log">No runs yet...</pre>
+        </section>
+
+        <section id="navigation">
+            <a href="manage-pipelines.html">Go to Pipeline Management</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Pacific Life - Developed By Rohit Mishra</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

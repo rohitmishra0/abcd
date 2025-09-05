@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Pipelines</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Pipeline Management</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Available Pipelines</h2>
+            <ul id="pipeline-list"></ul>
+        </section>
+
+        <section>
+            <h2>Edit Pipeline</h2>
+            <form id="edit-form" onsubmit="savePipeline(event)">
+                <label>Name:</label>
+                <input type="text" id="pipeline-name"><br>
+                <label>Parameters:</label>
+                <textarea id="pipeline-params"></textarea><br>
+                <button type="submit">Save Changes</button>
+            </form>
+        </section>
+
+        <section>
+            <a href="index.html">Back to Dashboard</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Pacific Life - Developed By Rohit Mishra</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
+
